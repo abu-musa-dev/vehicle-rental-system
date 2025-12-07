@@ -18,6 +18,14 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req: Request, res: Response) => {
+  res.status(200).json({
+    success: true,
+    message: '🚗 Vehicle Rental System API is Running Successfully!',
+    timestamp: new Date().toISOString(),
+  });
+});
+
 // Routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/vehicles', vehicleRoutes);
@@ -75,7 +83,7 @@ async function createTables() {
 // Test DB connection + create tables
 pool.connect()
   .then(async client => {
-    console.log('✅ Connected to PostgreSQL (Neon)');
+    console.log('✅ Connected to PostgreSQL ');
     client.release();
     await createTables();
   })
