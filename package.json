@@ -2,12 +2,11 @@
   "name": "vehicle-rental-system",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-   "scripts": {
-   "build": "tsc",
-   "start": "node dist/server.js",
-
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "dist/server.js", 
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "ts-node src/server.ts"
   },
   "keywords": [],
   "author": "",
